@@ -1,0 +1,103 @@
+#1.1 create  directory
+import os
+os.makedirs("/Users/frannyzhao/desktop/PROJECT R/DUE/python/assignment1")
+print("success")
+#1.2 delete  directory
+os.rmdir("/Users/frannyzhao/desktop/PROJECT R/DUE/python/assignment1")
+print("success")
+#1.3 List files and subdiectories
+import os
+list1 = os.listdir("/Users/frannyzhao/desktop/PROJECT R/DUE/")
+print(list1)
+# os.path.split("/Users/frannyzhao/desktop/PROJECT R/DUE/")
+# 1.4 Move file or subdirectory to another location
+shutil.move('/Users/frannyzhao/desktop/PROJECT R/DUE/python/List files test1','Users/frannyzhao/desktop/PROJECT R/DUE/python/assignment1')
+
+#2.1 Create binary file
+import os
+# 以默认方式打开文件
+f=open('/Users/frannyzhao/Desktop/test/BinaryFile1/QAv1.docx','rb')
+print(f.read())
+f.close()
+msg = "hello python, 你好！"
+# 把字符串进行编码转成字节数据, 这里好比模拟是从网络中接收到的字节数据
+data = msg.encode("utf-8")
+print(data, type(data))
+
+# 把字节数据保存到文件里面
+file = open('/Users/frannyzhao/Desktop/test/BinaryFile1/QAv1.docx','wb')
+# 写入字节数据到文件
+file.write(data)
+file.close()
+
+# 2.2 Delete binary file
+os.remove('/Users/frannyzhao/Desktop/test/BinaryFile1/合并PDF.pdf')
+
+# 2.3 Move binary file
+import shutil
+shutil.move('/Users/frannyzhao/Desktop/test/BinaryFile1/test1.png','/Users/frannyzhao/Desktop/test/BinaryFile2')
+
+# 2.4 Move binary file
+
+f= open('/Users/frannyzhao/Desktop/test/BinaryFile1/QAv1.docx','rb+')
+print(f.readlines())
+f.close()
+
+# 3.1 Create log text file
+f=open('/Users/frannyzhao/Desktop/test/BinaryFile1/logtest1.txt','w+')
+print(f.read())
+f.close()
+
+f=open('/Users/frannyzhao/Desktop/test/BinaryFile1/logtest2.txt','w+')
+print(f.read())
+f.close()
+
+
+# 3.2 delete log text file
+os.remove('/Users/frannyzhao/Desktop/test/BinaryFile1/logtest.txt1','w+')
+
+
+# 3.3  Move log text file
+import shutil
+shutil.move('/Users/frannyzhao/Desktop/test/BinaryFile1/logtest.txt1','/Users/frannyzhao/Desktop/test/BinaryFile2')
+
+# 3.4 Readfile (returns file content)
+f= open('/Users/frannyzhao/Desktop/test/BinaryFile1/logtest1.txt1','w+')
+f.write("hello python, 你好")
+print(f.readlines())
+f.close()
+
+# 3.5 Append a line to the end of the log text file
+f = open('/Users/frannyzhao/Desktop/test/BinaryFile1/logtest1.txt1','a+', encoding = 'utf-8')
+f.writelines('i love Ukraine!')
+f.close()
+
+
+def _init_(self, name, max_q_length=10086, max_data_size=13800, memory_limit=13800138, fs=None, persist_method=None,
+           persist_params=None, file_io=None, db_io=None):
+    self.name = name
+    self.max_q_length = max_q_length
+    self.max_data_size = max_data_size
+    self.memory_limit = memory_limit
+    self.fs = fs
+    self.persist_method = persist_method
+    self.persist_params = persist_params
+    # IO method
+    self.file_io = file_io
+    self.db_io = db_io
+    self.is_io = fs.not_bad(file_io)
+    # standard property
+    self.queue = []
+    self.status = True
+    self.meta_dict = {}
+    self.usage_pct = 0
+
+
+f7 = open('/Users/frannyzhao/Desktop/test/BinaryFile1/logtest1.txt1','a+', encoding = 'utf-8')
+buffer = Buffer('test', fs = f7 )
+# Push element
+for i in range (10):
+    buffer.push(i, meta_dict = {'pkey':i},verbose=True)
+
+
+
